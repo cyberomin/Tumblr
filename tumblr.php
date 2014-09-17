@@ -2,11 +2,11 @@
 
 class Tumblr 
 {
-	private $url = "http://api.tumblr.com/v2/blog/uduakblog.tumblr.com/posts/text?api_key=";
-	private $api_key = "api_key";
+	private $url = "http://api.tumblr.com/v2/blog/";
         
-	public function __construct() {
-	       $this->url = $this->url.$this->api_key;
+	public function __construct($blog_url,$api_key) {
+                $blog_url = $this->url.$blog_url."/posts/text?api_key=";
+	        $this->url = $blog_url.$api_key;
 	}
 
 	public function getPost() {
